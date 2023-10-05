@@ -1,0 +1,9 @@
+1/tao screen
+gulp f7 --folder/file
+
+2/build project
+
+gulp buildall
+
+3/ deploy server
+gulp deploy

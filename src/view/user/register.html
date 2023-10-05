@@ -1,0 +1,62 @@
+
+<!-- Router
+addRoute({
+    path: '/user/register/',
+    url: site_url('/user/register.html'),
+    on: AEventPage("userregister")
+}).then((page)=>{
+
+});
+!-->
+<div class="page userregister" data-name="userregister">
+      <!-- Top Navbar -->
+      <div class="navbar webviewnewsbars">
+         <div class="navbar-bg"></div>
+ <div class="navbar-inner sliding">
+   <div class="left">
+     <a href="#" class="link back">
+       <i class="icon icon-back"></i>
+       <span class="if-not-md"></span>
+     </a>
+   </div>
+   <div class="title">Đăng ký</div>
+   
+ </div>
+</div>
+
+          
+          <!-- Scrollable page content -->
+           <div class="page-content">
+              <div class="flex-center">
+        <div class="">
+ 
+            <img src="https://cdn-icons-png.flaticon.com/128/3456/3456388.png" width="125" height="125">
+        </div>
+        <div class="flex-col flex">
+            <form action="" method="POST">
+       <p>Chào mừng đến hệ thống Meta DT. Vui lòng chon tài khoản bạn muốn khởi tạo:</p>
+      <div class="mb-3 form-check">
+        <input type="radio" checked name="role"  value="hocsinh" class="form-check-input" id="exampChsseck1">
+        <label class="form-check-label" for="exampChsseck1">Học sinh</label>
+      </div><div class="mb-3 form-check">
+        <input type="radio" class="form-check-input" name="role" value="giaovien" id="exampslessssChsseck1">
+        <label class="form-check-label" for="exampslessssChsseck1">Giáo viên</label>
+      </div><div class="mb-3 form-check">
+        <input type="radio" class="form-check-input" name="role" value="phuhuynh" id="exampsleChsseck1">
+        <label class="form-check-label" for="exampsleChsseck1">Phụ huynh</label>
+      </div>
+
+
+      <div class="text-center" style="marginTop:24px">
+          Có tài khoản, <a href="/user/login/">Đăng nhập ngay</a>
+      </div>
+      
+    </form>
+        </div>
+        <div>
+            <button onclick="$(this).closest('.page').find('form').submit()" class="btn btn-primary btn-submit">Tiếp tục</button>
+        </div>
+    </div>
+          </div>
+    </div>
+    

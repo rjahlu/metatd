@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="apple-mobile-web-app-title" content="My App">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="viewport-fit=cover,width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <meta name="auth-token" content="">
+
+  <!-- Color theme for statusbar (Android only) -->
+  <meta name="theme-color" content="#2196f3">
+
+  
+   <title>Meta DT</title>
+ 
+  
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/framework7/4.4.0/css/framework7.bundle.min.css'>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel='stylesheet' href='./build/app.min.css'>
+<style>
+
+</style>
+ 
+  <script>
+  function site_url(url){
+  return "view/"+url;
+}
+  function site_url_ajax(url){
+  return "https://f7.ahlupos.com/users/demo/mt/api/"+url;
+}
+</script>
+
+  
+  
+</head>
+
+<body translate="no">
+  <div id="app">
+    <div class="statusbar"></div>
+    <div class="panel panel-left panel-cover">
+      <div class="page page-init">
+        <div class="page-content">
+          <a href="/dashboard/" class="profile-block panel-close">
+            <div class="" align="center">
+              <div class="rounded-white top-3x-2">
+                <img  src="http://www.fullstackdev.cl/assets/img/logo3.png">
+              </div>
+              <div class="color-white top-3x bottom-2x">
+                Luis Felipe Gajardo
+              </div>
+            </div>
+          </a>
+          <div class="clear"></div>
+          <div class="list links-list top-2x">
+            <ul class="accordion-list">
+              <li>
+                <a href="/pevaluacion/" data-view=".view-main" class="panel-close">
+                  <div class="item-title">
+                    <i class="far fa-check-circle"></i> CheckList
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/pevaluacion/" data-view=".view-main" class="panel-close">
+                  <div class="item-title">
+                    <i class="far fa-check-circle"></i> Puntos de Evaluación
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/resolver-ticket/" data-view=".view-main" class="panel-close">
+                  <div class="item-title">
+                    <i class="far fa-check-circle"></i> Tickets
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="/sincronizar/" data-view=".view-main" class="panel-close">
+                  <div class="item-title">
+                    <i class="far fa-check-circle"></i> Sincronizar
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="block top-x">
+            <button class="col button button-outline button-round">Logout</button>
+          </div>
+          <div class="block top-3x">
+            <div class="row">
+              <button class="col button button-raised button-fill button-round"><i class="far fa-envelope"></i> CONTACTO</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="view view-main view-init ios-edges" data-url="/">
+      <!-- page default -->
+      <div class="page home" data-name="home">
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left">
+              <a href="#" class="link icon-only panel-open" data-panel="left">
+                <i class="fas fa-bars color-white"></i>
+              </a>
+            </div>
+            <div class="title sliding">Framework7</div>
+          </div>
+        </div>
+
+        <div class="page-content">
+          <div class="block">
+            <div class="buttons">
+              <a href="/task/monhoc/">
+            <img src="https://cdn-icons-png.flaticon.com/128/2666/2666505.png" width="75" height="75"><br/>Bộ môn
+          </a>
+          <a href="/task/lophoc/">
+            <img src="https://cdn-icons-png.flaticon.com/128/2666/2666505.png" width="75" height="75"><br/>Lớp học
+          </a>
+
+          <a href="/task/phaquyenhocsinh/">
+            <img src="https://cdn-icons-png.flaticon.com/128/2666/2666505.png" width="75" height="75"><br/>Phân quyền
+          </a>
+
+          <a href="/task/baocao/">
+            <img src="https://cdn-icons-png.flaticon.com/128/2666/2666505.png" width="75" height="75"><br/>Báo cáo
+          </a>
+          </div>
+           </div>
+          
+        </div>
+      </div>
+
+      <!--  -->
+            
+ 
+
+      <!--  -->
+    </div>
+  </div>
+  
+ 
+
+ 
+<script src='./build/app.min.js'></script> 
+
+ <script type="text/javascript">
+  // setupSocket(...)
+  runmain();
+</script>
+
+<script id="need_card" type="text/x-handlebars-template">
+ <div class="horizontal_item wrapper needcard flex-col {{type}}"  data-router="/need/MyNeedItem/{{id}}">
+    <div class="flex h100">
+        <div class="item-thumb">
+          <div class="image-thumbnail" style="background-image: url('{{image}}');">
+            <span class="status hot">{{category}}</span>
+            <a class="button button-raise btn-type btn-primary" href="/need/type/{{type}}/" style="margin-bottom: 8px;">{{type}}</a> 
+          </div> 
+        </div> 
+        <div class="item-body">
+          <p class="title">{{title}}</p>
+          <p class="price">Giá: {{number price_from}} - {{number price_to}}</p>
+          <p class="local">{{address}}</p>                      
+        </div>
+    </div>
+    
+</div>
+
+</script>
+ 
+</body>
+
+</html>

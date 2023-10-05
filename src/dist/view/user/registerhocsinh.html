@@ -1,0 +1,56 @@
+
+<!-- Router
+addRoute({
+    path: '/user/registerhocsinh/',
+    url: site_url('/user/registerhocsinh.html'),
+    on: AEventPage("userregisterhocsinh")
+}).then((page)=>{
+
+});
+!-->
+<div class="page userregisterhocsinh" data-name="userregisterhocsinh">
+      <!-- Top Navbar -->
+      <div class="navbar webviewnewsbars">
+         <div class="navbar-bg"></div>
+ <div class="navbar-inner sliding">
+   <div class="left">
+     <a href="#" class="link back">
+       <i class="icon icon-back"></i>
+       <span class="if-not-md"></span>
+     </a>
+   </div>
+   <div class="title">Đăng ký</div>
+   
+ </div>
+</div>
+
+          
+          <!-- Scrollable page content -->
+           <div class="page-content">
+              <div class="block">
+                <p>Tài khoản danh cho học sinh. Vui lòng cung cấp thông tin bê dứoi:</p>
+                <form action="" method="POST">
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Họ và tên</label>
+                    <input type="email" class="form-control" name="fullname" id="exampleInputEmail1" aria-describedby="emailHelp"> 
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Username</label>
+                    <input type="text" class="form-control" name="username" id="exampleInputPassword1">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Mật khẩu</label>
+                    <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+                  </div>
+
+                   
+                </form>
+
+                <div>
+                    <button onclick="$(this).closest('.page').find('form').submit()" class="btn btn-primary btn-submit">Tiếp tục</button>
+                </div>
+              </div>
+          </div>
+    </div>
+    

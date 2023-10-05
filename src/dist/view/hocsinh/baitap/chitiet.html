@@ -1,0 +1,63 @@
+
+<!-- Router
+addRoute({
+    path: '/hocsinh/baitap/chitiet/',
+    url: site_url('/hocsinh/baitap/chitiet.html'),
+    on: AEventPage("hocsinhbaitapchitiet")
+}).then((page)=>{
+
+});
+!-->
+<div class="page intro" data-name="hocsinhbaitapchitiet">
+      <!-- Top Navbar -->
+      <div class="navbar webviewnewsbars">
+         <div class="navbar-bg"></div>
+ <div class="navbar-inner sliding">
+   <div class="left">
+     <a href="#" class="link back">
+       <i class="icon icon-back"></i>
+       <span class="if-not-md"></span>
+     </a>
+   </div>
+   <div class="title">Bài tập ngữ pháp</div>
+
+   <div class="right" onclick="$(this).closest('form').submit()">Cập nhật</div>
+   
+ </div>
+</div>
+
+          
+          <!-- Scrollable page content -->
+           <div class="page-content">
+             <form action="">
+                <div class="white-view">
+                   <div class="flex-col">
+                      <span>Thời gian nhận</span>
+                      <span>--</span>
+                   </div>
+                   <div class="flex-col">
+                      <span>Tiến độ(%)</span>
+                     <input type="number" class="form-control" placeholder="Tiến độ">
+                   </div>
+                   <div class="flex-col">
+                      <a href="/hocsinh/baitap/danhgia/1">Xem đánh giá</a> 
+                   </div>
+                </div>
+                <div class="white-view">
+                   <p>Nội dung bài tập</p>
+                   <textarea name="" style="height: 200px" class="form-control">
+                     
+                   </textarea>
+                </div>
+
+                <div class="white-view text-center">
+                   <p>Kết quả</p>
+                   <div>
+                      <img width="125" height="215" src="https://placehold.co/125x215/cecece/333/png?text=K%E1%BA%BFt%20qu%E1%BA%A3" alt="">
+                   </div><br/>
+                   <button type="button" class="btn btn-primary">Đăng ảnh</button>
+                </div>
+             </form>
+          </div>
+    </div>
+    
