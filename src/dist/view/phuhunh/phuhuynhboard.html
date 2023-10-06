@@ -9,6 +9,19 @@ addRoute({
 });
 !-->
 <div class="page intro" data-name="phuhunhphuhuynhboard">
+   <!-- Top Navbar -->
+      <div class="navbar webviewnewsbars">
+         <div class="navbar-bg"></div>
+ <div class="navbar-inner">
+   <div class="left">
+     
+   </div>
+   <div class="title">Meta DT</div>
+   <div class="right">
+       <i class="fas fa-sign-out-alt logout" onclick="app.dialog.confirm('Bạn có muốn chắc muốn xoá?', 'Cảnh báo', function(){window.user.logout('/user/login/')},function(){})"> Thoát</i>
+   </div>
+ </div>
+</div>
       <!-- Scrollable page content -->
            <div class="page-content">
               <div class="flex-col">
@@ -24,7 +37,12 @@ addRoute({
                   <div class="buttons">
           
           <a href="/phuhunh/baocao/hocsinh/">
-            <img src="https://cdn-icons-png.flaticon.com/128/2666/2666505.png" width="75" height="75"><br/>Báo cáo
+            <div class="flex-col">
+               <img src="https://cdn-icons-png.flaticon.com/128/2666/2666505.png" width="75" height="75">
+               <div class="flex">
+                 Báo cáo
+               </div>
+            </div>
           </a>
           </div>
               </div>

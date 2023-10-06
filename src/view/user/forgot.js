@@ -13,9 +13,7 @@
         modal.find("form").validate({
             submitHandler : function(form){
                 var data = $(form).serializeObject();
-
-                var data = $(form).serializeObject();
-
+ 
                 console.log(data);
 
                 if(data.role=="hocsinh"){

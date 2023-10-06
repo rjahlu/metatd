@@ -5,37 +5,33 @@
     var modal = null;
     $(document).on(namemodal+"_Before",function(event,e,page){
         modal = $(page.el);
-
-        // window.user.storage.clear();
-
+ 
     }).on(namemodal+"_Init",function(event,e,page){
          modal = $(page.el);
+        
+        var params = namemodal.pageData();
+         console.log(params);
         modal.find("form").validate({
             submitHandler : function(form){
-                var data = $(form).serializeObject();
+                var data = $.extend(params,$(form).serializeObject(),true);
 
                 console.log(data);
 
+                data.role ="hocsinh";
+
                 
                 window.showLoader();
-                post(site_url("api/user.php?a=login"),data,function(r){
+                post(site_url_ajax("user.php?a=register"),data,function(r){
 
                     try{
 
                         if(r.code){
-                            window.user.login(r.user);
+                            // window.user.login(r.user);
 
-                            mainView.router.navigate("/intro/", {});
-                            // ACache.getItem("skip_intro",function(res){
-
-                            //  if(res){
-                            //      mainView.router.navigate("/home/", {});
-                            //  }else{
-                            //      mainView.router.navigate("/intro/", {});
-                            //  }
-                            // });
+                             "/user/login/".navigate({});
+                             
                         }else{
-                            alert(r.error);
+                           app.dialog.alert(r.error,"Thông báo");
                         }
                     }catch(e){
                         alert(e);

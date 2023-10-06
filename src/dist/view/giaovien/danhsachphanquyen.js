@@ -1,7 +1,7 @@
 
 
 (function(){
-    var namemodal = "lophocaddhosinh";
+    var namemodal = "giaoviendanhsachphanquyen";
     var modal = null;
     $(document).on(namemodal+"_Before",function(event,e,page){
         modal = $(page.el);
@@ -24,7 +24,16 @@
 
                         if(r.code){
                             window.user.login(r.user);
- 
+
+                            mainView.router.navigate("/intro/", {});
+                            // ACache.getItem("skip_intro",function(res){
+
+                            //  if(res){
+                            //      mainView.router.navigate("/home/", {});
+                            //  }else{
+                            //      mainView.router.navigate("/intro/", {});
+                            //  }
+                            // });
                         }else{
                             alert(r.error);
                         }

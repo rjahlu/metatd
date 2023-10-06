@@ -1,50 +1,27 @@
 
-
 (function(){
 	var namemodal = "lophoc";
 	var modal = null;
+	 
 	$(document).on(namemodal+"_Before",function(event,e,page){
 		modal = $(page.el);
+		console.log(modal);
 
-		// window.user.storage.clear();
+	 	
 
 	}).on(namemodal+"_Init",function(event,e,page){
 		 modal = $(page.el);
-	    modal.find("form").validate({
-	    	submitHandler : function(form){
-	    		var data = $(form).serializeObject();
 
-	    		console.log(data);
+		 post(site_url_ajax("lophoc.php?a=list"),{},function(r){
+ 			
+ 			var s = Handlebars.compile($("#itemlophoc").html());
 
-	    		
-	    		window.showLoader();
-	    		post(site_url("api/user.php?a=login"),data,function(r){
-
-	    			try{
-
-		    			if(r.code){
-		    				window.user.login(r.user);
-
-		    				mainView.router.navigate("/intro/", {});
-			    			// ACache.getItem("skip_intro",function(res){
-
-				    		// 	if(res){
-				    		// 		mainView.router.navigate("/home/", {});
-				    		// 	}else{
-				    		// 		mainView.router.navigate("/intro/", {});
-				    		// 	}
-				    		// });
-		    			}else{
-		    				alert(r.error);
-		    			}
-	    			}catch(e){
-	    				alert(e);
-	    			}
+ 			modal.find(".buttons").html(r.map(function(v){
+ 				return s(v);
+ 			}).join("")); 
 	    			
-	    		},true); 
-	    		
-	    	}
-	    });
+	    },true); 
+	     
 	}).on(namemodal+"_Leave",function(event,e,page){
 	    
 	});

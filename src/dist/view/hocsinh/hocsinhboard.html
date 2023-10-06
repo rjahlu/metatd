@@ -12,12 +12,14 @@ addRoute({
       <!-- Top Navbar -->
       <div class="navbar webviewnewsbars">
          <div class="navbar-bg"></div>
- <div class="navbar-inner sliding">
+ <div class="navbar-inner">
    <div class="left">
      
    </div>
    <div class="title">Meta DT</div>
-   
+   <div class="right">
+       <i class="fas fa-sign-out-alt logout" onclick="app.dialog.confirm('Bạn có muốn chắc muốn xoá?', 'Cảnh báo', function(){window.user.logout('/user/login/')},function(){})"> Thoát</i>
+   </div>
  </div>
 </div>
 

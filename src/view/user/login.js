@@ -26,7 +26,7 @@
 		    			if(r.code){
 		    				window.user.login(r.user);
 
-		    				mainView.router.navigate("/intro/", {});
+		    				// mainView.router.navigate("/intro/", {});
 			    			// ACache.getItem("skip_intro",function(res){
 
 				    		// 	if(res){
@@ -35,12 +35,12 @@
 				    		// 		mainView.router.navigate("/intro/", {});
 				    		// 	}
 				    		// });
-				    		if(data.role=="hocsinh"){
-			    				mainView.router.navigate("/hocsinhboard/", {});
-			    			}else if(data.role=="phuhuynh"){
-			    				mainView.router.navigate("/phuhuynhboard/", {});
-			    			}else if(data.role=="giaovien"){
-			    				mainView.router.navigate("/giaovienboard/", {});
+				    		if(data.role=="hocsinh" && r.user.role.includes(data.role)){
+			    				"/hocsinhboard/".navigate({});
+			    			}else if(data.role=="phuhuynh"&& r.user.role.includes(data.role)){
+			    				"/phuhuynhboard/".navigate({});
+			    			}else if(data.role=="giaovien"&& r.user.role.includes(data.role)){
+			    				"/giaovienboard/".navigate({});
 			    			}
 		    			}else{
 		    				app.dialog.alert(r.error,"Thông báo");

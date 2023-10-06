@@ -10,30 +10,29 @@
 
     }).on(namemodal+"_Init",function(event,e,page){
          modal = $(page.el);
+         var data = namemodal.pageData();
+
+         modal.find(".name").val(data.name);
+
         modal.find("form").validate({
             submitHandler : function(form){
-                var data = $(form).serializeObject();
+                 data = $.extend(data,$(form).serializeObject(),true);
 
                 console.log(data);
 
                 
                 window.showLoader();
-                post(site_url("api/user.php?a=login"),data,function(r){
+                post(site_url_ajax("monhoc.php?a=dangbai"),data,function(r){
 
                     try{
 
                         if(r.code){
-                            window.user.login(r.user);
+                          
 
-                            mainView.router.navigate("/intro/", {});
-                            // ACache.getItem("skip_intro",function(res){
+                            //cache data now
 
-                            //  if(res){
-                            //      mainView.router.navigate("/home/", {});
-                            //  }else{
-                            //      mainView.router.navigate("/intro/", {});
-                            //  }
-                            // });
+                            mainView.router.back();
+                            
                         }else{
                             alert(r.error);
                         }

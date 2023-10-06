@@ -2,6 +2,7 @@
 window.AEventPage = function(name_route){
     return { 
         pageAfterIn: function (e, page) {
+            console.log(name_route);
             $(document).trigger(name_route+"_Before",[e,page]);
         },
         pageInit: function (e, page) {
@@ -57,7 +58,7 @@ addRoute({
 addRoute({
     path: '/monhoc/item/:id',
     url: site_url('monhoc/monhocitem.html'),
-    on: AEventPage("hocsinhmonhoc") 
+    on: AEventPage("monhocitem") 
 }).then((page)=>{
 
 });
@@ -221,7 +222,7 @@ addRoute({
 
 });
 addRoute({
-    path: '/giaovien/dangbaitap/',
+    path: '/giaovien/dangbaitap/:id/:name/',
     url: site_url('/giaovien/dangbaitap.html'),
     on: AEventPage("giaoviendangbaitap")
 }).then((page)=>{
@@ -331,6 +332,13 @@ addRoute({
     path: '/user/forgotstepsuccess/',
     url: site_url('/user/forgotstepsuccess.html'),
     on: AEventPage("userforgotstepsuccess")
+}).then((page)=>{
+
+});
+addRoute({
+    path: '/giaovien/danhsachphanquyen/',
+    url: site_url('/giaovien/danhsachphanquyen.html'),
+    on: AEventPage("giaoviendanhsachphanquyen")
 }).then((page)=>{
 
 });

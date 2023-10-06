@@ -10,6 +10,9 @@
 
     }).on(namemodal+"_Init",function(event,e,page){
          modal = $(page.el);
+
+         var data = namemodal.pageData();
+
          var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
       var calendarInline = app.calendar.create({
         containerEl: modal.find('.calendar-input')[0],
@@ -42,6 +45,28 @@
           }
         }
       });
+
+      post(site_url_ajax("hocsinh.php?a=baitapcuatoi"),data,function(r){
+      
+      var s = Handlebars.compile($("#itemmonhocbaitaphocsinh").html());
+
+      modal.find(".buttons.new").html(r.new.map(function(v){
+        return s(v);
+      }).join("")); 
+
+      modal.find(".buttons.done").html(r.new.map(function(v){
+        return s(v);
+      }).join(""));
+
+
+      modal.find(".total_new").html(r.done.length);
+      modal.find(".total_done").html(r.done.length);
+
+
+      modal.find(".namemonhoc").html(r.monhoc.name);
+      
+            
+      },true); 
     }).on(namemodal+"_Leave",function(event,e,page){
         
     });

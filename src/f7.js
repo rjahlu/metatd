@@ -376,8 +376,8 @@ window.runmain = function(f){
     var u = window.user.hasLogin();
     var forcelogin = 1;
 
-    if(u&&u.session_id){
-        $('[name="auth-token"]').attr("content",u.session_id);
+    if(u&&u.token){
+        $('[name="auth-token"]').attr("content",u.token);
     }
 
 
@@ -391,20 +391,20 @@ window.runmain = function(f){
     }
     mainView.router.navigate(pi||pointer, {});
     
-
-//   $.ajaxSetup({
-//   async: true,
-//   type: 'POST',
-//   beforeSend:function(xhr,options){
+ 
+  $.ajaxSetup({
+  async: true,
+  type: 'POST',
+  beforeSend:function(xhr,options){
      
-//       var auth =$('[name="auth-token"]').attr("content");
-//       if(auth){
-//         xhr.setRequestHeader( 'auth-token',auth);
-//       }
+      var auth =$('[name="auth-token"]').attr("content");
+      if(auth){
+        xhr.setRequestHeader( 'auth-token',auth);
+      }
        
       
-//   }
-// });
+  }
+});
 }
 
 
@@ -519,7 +519,7 @@ window.hideLoader = function(t){
 
 String.prototype.pageData = function(){
     var name = String(this); 
-    return $.extend({},name.f7AppData(),name.f7Route(),true);
+    return $.extend({},name.f7AppData(),app.views.main.router.currentRoute.params,true);
 };
 
 
@@ -531,13 +531,9 @@ String.prototype.f7AppData  = function(){
 var handlers_route = {};
 var handlers_route_=null;
 String.prototype.navigate = function(data){
-    handlers_route_ = data;
-    $(document).on("onePage",function(v,page){
-        var name = window.ActivePage.f7PageData.name;
-        console.log(name);
-        handlers_route[name] = handlers_route_;
-     });
-    mainView.router.navigate(String(this));
+    var name = String(this);
+    handlers_route[name] = data;
+    mainView.router.navigate(name,data);
 };
 String.prototype.navigateReplace=function(data){
     

@@ -17,11 +17,11 @@
                 console.log(data);
 
                 if(data.role=="hocsinh"){
-                    mainView.router.navigate("/user/registerhocsinh/", data);
+                    "/user/registerhocsinh/".navigate(data);
                 }else if(data.role=="phuhuynh"){
-                    mainView.router.navigate("/user/registerophuhuynh/", data);
+                    "/user/registerophuhuynh/".navigate(data);
                 }else if(data.role=="giaovien"){
-                    mainView.router.navigate("/user/registergiaovien/", data);
+                    "/user/registergiaovien/".navigate(data);
                 } 
                 
             }

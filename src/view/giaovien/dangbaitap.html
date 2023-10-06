@@ -29,15 +29,21 @@ addRoute({
            <div class="page-content">
               <form action="">
                 <div class="white-view">
+                    <div class="form-group">
+                     <label for="xxx">Tên bài tập</label>
+                     <input type="text" name="name"  class="form-control" />
+                  </div>
                   <div class="form-group">
                      <label for="xxx">Thời gian nhận</label>
-                     <input type="datetime" name="deadline"  class="form-control" />
+                     <input type="date" name="date_from"  class="form-control" />
+                  </div>
+                  <div class="form-group">
+                     <label for="xxx">Thời gian kết thúc</label>
+                     <input type="date" name="date_to"  class="form-control" />
                   </div>
                    <div class="form-group">
-                     <label for="xxx">Bộ môn</label>
-                      <select name="monhoc" class="form-control">
-                       
-                     </select>
+                     <label for="xxx">Môn học</label>
+                     <input type="text" readonly class="form-control name" />
                   </div>
                  
                     
@@ -51,7 +57,7 @@ addRoute({
 
                 <div class="white-view text-center">
                   
-                   <button type="button" class="btn btn-primary">Đăng bài</button>
+                   <button   class="btn btn-primary">Đăng bài</button>
                 </div>
              </form>
           </div>

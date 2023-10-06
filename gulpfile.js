@@ -4,6 +4,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     watch = require('gulp-watch'),
     minifyCss  = require('gulp-minify-css'),
+    babel = require('gulp-babel'),
     browserSync = require('browser-sync');
     var argv = require('yargs').argv;
 
@@ -80,9 +81,9 @@ var exec = require('child_process').exec;
 //////////////////////////////
 gulp.task('js', function () {
    return gulp.src(['./src/view/**/*.js','./src/view/**/**/*.js'])
-      .pipe(jshint())
+      .pipe(jshint()) 
       .pipe(jshint.reporter('default'))
-      
+      .pipe(babel({ presets: ['es2015'] })) 
       .pipe(uglify())
       .pipe(concat('app.beta.js'))
       .pipe(gulp.dest('./src/build/'));

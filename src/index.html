@@ -106,9 +106,9 @@
     </div>
   </div>
 
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/framework7/2.0.10/js/framework7.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/template7/1.3.5/template7.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js'></script> 
+  <script src='./js/framework7.js'></script>
+<script src='./js/template7.min.js'></script>
+<script src='./js/handlebars.min.js'></script> 
 <script src="https://faucet.ahlupos.com/js/reduxthunk.js"></script>
  <script src='js/1.jquery.min.js?t=2'></script> 
 
@@ -122,43 +122,119 @@
 <script id="rendered-js" >
 //
 //setupsocket("...");
-  // runmain(function(u,pointer){
-  //     // if(u)return;
-  //     var a =  window.localStorage.getItem("f7_history_url");
-  //     if(a)return a;
+  runmain(function(u,pointer){
+      if(u){
+        
+        console.log(u);
+    if(u.role.includes("hocsinh")){
+              pointer="/hocsinhboard/";
+            }else if(u.role.includes("phuhuynh")){
+              pointer="/phuhuynhboard/";
+            }else if(u.role.includes("giaovien")){
+              pointer = "/giaovienboard/";
+            }
 
-  //     a = document.location.pathname.split('?')[0];
-  //     if(a!="/"){
-  //       return a;
-  //     }
-  //     return pointer;
-  // });
+        return pointer;
+      }
+      var a =  window.localStorage.getItem("f7_history_url");
+      if(a)return a;
 
-runmain();
+      a = document.location.pathname.split('?')[0];
+      if(a!="/"){
+        return a;
+      }
+      return pointer;
+  });
+
+// runmain();
 
   
 
 </script>
 
-<script id="need_card" type="text/x-handlebars-template">
- <div class="horizontal_item wrapper needcard flex-col {{type}}"  data-router="/need/MyNeedItem/{{id}}">
-    <div class="flex h100">
-        <div class="item-thumb">
-          <div class="image-thumbnail" style="background-image: url('{{image}}');">
-            <span class="status hot">{{category}}</span>
-            <a class="button button-raise btn-type btn-primary" href="/need/type/{{type}}/" style="margin-bottom: 8px;">{{type}}</a> 
-          </div> 
-        </div> 
-        <div class="item-body">
-          <p class="title">{{title}}</p>
-          <p class="price">Giá: {{number price_from}} - {{number price_to}}</p>
-          <p class="local">{{address}}</p>                      
-        </div>
-    </div>
-    
-</div>
+<script id="itemlophoc" type="text/x-handlebars-template">
+ 
+<a href="/lophoc/item/{{id}}">
+            <div class="flex-col">
+               <img src="https://cdn-icons-png.flaticon.com/128/2666/2666505.png" width="75" height="75"><br/>{{name}}
+            <div>
+              <div>Tổng số</div>
+              <span>{{total_hocsinh}}</span>
+            </div>
+            </div>
+          </a>
 
 </script>
+<script id="itemhocsinhlophoc" type="text/x-handlebars-template">
+ 
+        <a href="/hocsinh/profile/{{id}}">
+           <div class="flex-col">
+              <div>
+                 <div class="name">{{fullname}}</div>
+                 <div class="name">Vị trí ghế : {{vitri}}</div>
+              </div>
+              <div>
+                 <div class="name">Học sinh</div>
+                 <div class="name">{{sex}}</div>
+              </div>
+           </div>
+        </a>
+
+</script>
+
+<script id="itemmonhoc" type="text/x-handlebars-template">
+ <a href="/monhoc/item/{{id}}">
+                  <div class="flex-col">
+            <img src="https://cdn-icons-png.flaticon.com/128/2666/2666505.png" width="75" height="75"><br/>{{name}}
+          </div>
+          </a>
+
+</script>
+<script id="itemhocsinhmonhoc" type="text/x-handlebars-template">
+ <a href="/hocsinh/monhoc/baitap/{{id}}">
+                  <div class="flex-col">
+            <img src="https://cdn-icons-png.flaticon.com/128/2666/2666505.png" width="75" height="75"><br/>{{name}}
+          </div>
+          </a>
+
+</script>
+ 
+
+<script id="itemmonhocbaitap" type="text/x-handlebars-template">
+<a href="/hocsinh/monhoc/baitap/chitiet/{{id}}">
+                   <div class="flex-col">
+                      <div>
+                         <div class="name">{{name}}</div>
+                         <div class="name">Kết thúc: {{date_to}}</div>
+                      </div>
+                      <div>
+                         <div class="name">Kí hiệu</div>
+                         <div class="name">BAITAP{{id}}</div>
+                      </div>
+                   </div>
+                </a>
+
+
+</script>
+
+
+<script id="itemmonhocbaitaphocsinh" type="text/x-handlebars-template">
+<a href="/hocsinh/monhoc/baitap/chitiet/{{id}}">
+                   <div class="flex-col">
+                      <div>
+                         <div class="name">Bài tập ngữ pháp</div>
+                         <div class="name">Kết thúc: 21:00 04/10/2023</div>
+                      </div>
+                      <div>
+                         <div class="name">Tiến độ</div>
+                         <div class="name">70%</div>
+                      </div>
+                   </div>
+                </a>
+
+
+</script>
+
  
 </body>
 

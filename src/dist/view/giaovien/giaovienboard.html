@@ -9,7 +9,19 @@ addRoute({
 });
 !-->
 <div class="page giaoviengiaovienboard" data-name="giaoviengiaovienboard">
+      <!-- Top Navbar -->
+      <div class="navbar webviewnewsbars">
+         <div class="navbar-bg"></div>
+ <div class="navbar-inner">
+   <div class="left">
      
+   </div>
+   <div class="title">Meta DT</div>
+   <div class="right">
+       <i class="fas fa-sign-out-alt logout" onclick="app.dialog.confirm('Bạn có muốn chắc muốn xoá?', 'Cảnh báo', function(){window.user.logout('/user/login/')},function(){})">Thoát</i>
+   </div>
+ </div>
+</div>
           <!-- Scrollable page content -->
            <div class="page-content">
               <div class="flex-col">
@@ -21,15 +33,17 @@ addRoute({
                       <div class="address">Vũng tàu</div>
                   </div>
               </div>
+              <br />
+              <br />
                   <div class="buttons">
               <a href="/monhoc/">
-            <img src="https://cdn-icons-png.flaticon.com/128/2666/2666505.png" width="75" height="75"><br/>Bộ môn
+            <img src="https://cdn-icons-png.flaticon.com/128/2666/2666505.png" width="75" height="75"><br/>Môn học
           </a>
           <a href="/lophoc/">
             <img src="https://cdn-icons-png.flaticon.com/128/2666/2666505.png" width="75" height="75"><br/>Lớp học
           </a>
 
-          <a href="/giaovien/phaquyenhocsinh/">
+          <a href="/giaovien/danhsachphanquyen/">
             <img src="https://cdn-icons-png.flaticon.com/128/2666/2666505.png" width="75" height="75"><br/>Phân quyền
           </a>
 
